@@ -9,31 +9,61 @@ using namespace std;
 
 //implementacao: 190015187
 // revisao:
-class TUCodigo{
+
+class TU{
+
+public:
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
+
+};
+class TUCodigo : public TU{
 private:
     const static string CODIGO_VALIDO;
     const static string CODIGO_INVALIDO;
     Codigo *codigo;
+
+    int estado;
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+    int run();
+
+};
+
+
+
+class TUColuna: public TU{
+    private:
+    const static int LIMITE_INVALIDO = 25;
+    const static int LIMITE_VALIDO = 10;
+    Coluna *coluna;
     int estado;
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
     void testarCenarioFalha();
 public:
-    const static int SUCESSO = 0;
-    const static int FALHA = -1;
+
     int run();
 };
 
-
-
-class TUColuna{
+class TUEmail : public TU{
+    private:
+    const static string EMAIL_INVALIDO;
+    const static string EMAIL_VALIDO;
+    Email *email;
+    int estado;
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+public:
+    int run();
 };
 
-class TUEmail{
-};
-
-class TULimite{
+class TULimite : public TU{
 private:
     const static int LIMITE_INVALIDO = 25;
     const static int LIMITE_VALIDO = 10;
@@ -44,26 +74,49 @@ private:
     void testarCenarioSucesso();
     void testarCenarioFalha();
 public:
-    const static int SUCESSO = 0;
-    const static int FALHA = -1;
+
     int run();
 };
 
-class TUSenha{
+class TUSenha : public TU{
+    private:
+    const static string SENHA_INVALIDA;
+    const static string SENHA_VALIDA;
+    Senha *senha;
+    int estado;
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+public:
+
+    int run();
 };
 
-class TUTexto{
+class TUTexto : public TU{
+    private:
+    const static string TEXTO_INVALIDO;
+    const static string TEXTO_VALIDO;
+    Texto *texto;
+    int estado;
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+public:
+
+    int run();
 };
 
 
 // Entidades
-class TUConta{
+class TUConta : public TU{
 };
 
-class TUQuadro{
+class TUQuadro : public TU{
 };
 
-class TUCartao{
+class TUCartao : public TU{
 };
 
 

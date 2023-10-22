@@ -25,14 +25,14 @@ inline string Codigo::getValor() const {
 // Revisao:
 class Coluna {
 private:
-    int valor;
-    bool validar(int);
+    string valor;
+    bool validar(string);
 public:
-    void setValor(int);
-    int getValor() const;
+    void setValor(string);
+    string getValor() const;
 };
 
-inline int Coluna::getValor() const {
+inline string Coluna::getValor() const {
     return valor;
 }
 

@@ -3,6 +3,18 @@
 const std::string TUCodigo::CODIGO_VALIDO = "AA12";
 const std::string TUCodigo::CODIGO_INVALIDO = "a1B1";
 
+const std::string TUEmail::EMAIL_VALIDO = "email@dominio";
+const std::string TUEmail::EMAIL_INVALIDO = "ema..@Teste. ";
+
+
+const std::string TUSenha::SENHA_VALIDA = "Ac!12";
+const std::string TUSenha::SENHA_INVALIDA = "ema..@Teste. ";
+
+
+const std::string TUTexto::TEXTO_VALIDO = "Oi, bom dia.";
+const std::string TUTexto::TEXTO_INVALIDO = "oi";
+
+
 // TUCodigo
 // implementacao: 190015187
 void TUCodigo::setUp(){

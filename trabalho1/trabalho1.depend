@@ -11,12 +11,12 @@
 	"dominios.h"
 	<string>
 
-1697939306 e:\dev\repos\tp1\tp1\trabalho1\dominios.h
+1697948974 e:\dev\repos\tp1\tp1\trabalho1\dominios.h
 	<stdexcept>
 	<string>
 
-1697926223 source:e:\dev\repos\tp1\tp1\trabalho1\testes.cpp
-	"entidades.h"
+1697948709 source:e:\dev\repos\tp1\tp1\trabalho1\testes.cpp
+	"testes.h"
 
 1697939306 source:e:\dev\repos\tp1\tp1\trabalho1\dominios.cpp
 	"dominios.h"
@@ -24,4 +24,8 @@
 	<cctype>
 	<set>
 	<locale>
+
+1697948752 e:\dev\repos\tp1\tp1\trabalho1\testes.h
+	"dominios.h"
+	<string>
 

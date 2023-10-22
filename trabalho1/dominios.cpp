@@ -36,17 +36,18 @@ void Codigo::setValor(string codigo)
 // ---- COLUNA ------
 // Implementação: 190015187
 // revisão:
-bool Coluna::validar(int coluna)
+bool Coluna::validar(string coluna)
 {
-    if(coluna > 3 || coluna <= 0)
+    if(coluna.empty() ||  (coluna != "SOLICITADO" && coluna != "EM EXECUCAO" && coluna != "CONCLUIDO") )
         return false;
+
     return true;
 
 }
 
 // Implementação: 190015187
 // revisão:
-void Coluna::setValor(int coluna)
+void Coluna::setValor(string coluna)
 {
     if(!validar(coluna))
         throw invalid_argument("Argumento invalido.");
