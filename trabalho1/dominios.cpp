@@ -66,7 +66,7 @@ bool Email::validar(string email)
         return false;
 
         // Expressao regular para verificar o formato do email.
-    regex pattern("^[A-Za-z0-9]{2,10}(?:\\.[A-Za-z0-9]{2,10})*@([A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\\.)+[A-Za-z]{2,20}$");
+    regex pattern("^[A-Za-z0-9]{2,10}(?:\\.[A-Za-z0-9]{2,10})*[^.\\s@]@([A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\\.)+[A-Za-z]{2,20}$");
 
     // Verifica se a string corresponde ao padrao.
     return regex_match(email, pattern);
