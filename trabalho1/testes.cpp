@@ -25,6 +25,7 @@ const std::string TUConta::NOME_VALIDO = "Betina alves";
 
 const string DESCRICAO_VALIDA = "Essa e uma descricao valida.";
 const string NOME_VALIDO_TESTE = "Esse e um quadro.";
+const string COLUNA_VALIDA_TESTE = "SOLICITADO";
 
 
 
@@ -391,6 +392,57 @@ void TUQuadro::testarCenario()
 }
 
 int TUQuadro::run()
+{
+    setUp();
+    testarCenario();
+    tearDown();
+    return estado;
+}
+
+//TUCartao
+
+void TUCartao::setUp()
+{
+    cartao = new Cartao();
+    estado = SUCESSO;
+}
+
+void TUCartao::tearDown()
+{
+    delete cartao;
+}
+
+void TUCartao::testarCenario()
+{
+    Codigo codigo;
+    Texto nome;
+    Texto descricao;
+    Coluna coluna;
+
+    codigo.setValor(CODIGO_VALIDO_ENTIDADE);
+    cartao->setCodigo(codigo);
+    if(cartao->getCodigo().getValor() != CODIGO_VALIDO_ENTIDADE)
+    estado = FALHA;
+
+    nome.setValor(NOME_VALIDO_TESTE);
+    cartao->setNome(nome);
+    if(cartao->getNome().getValor() != NOME_VALIDO_TESTE)
+    estado = FALHA;
+
+    descricao.setValor(DESCRICAO_VALIDA);
+    cartao->setDescricao(descricao);
+    if(cartao->getDescricao().getValor() != DESCRICAO_VALIDA)
+        estado = FALHA;
+
+    coluna.setValor(COLUNA_VALIDA_TESTE);
+    cartao->setColuna(coluna);
+    if(cartao->getColuna().getValor() != COLUNA_VALIDA_TESTE)
+        estado = FALHA;
+
+
+}
+
+int TUCartao::run()
 {
     setUp();
     testarCenario();

@@ -142,7 +142,7 @@ public:
 };
 
 class TUQuadro : public TU{
-    private:
+private:
     Quadro *quadro;
     int estado;
     void setUp();
@@ -154,6 +154,15 @@ public:
 };
 
 class TUCartao : public TU{
+private:
+    Cartao *cartao;
+    int estado;
+    void setUp();
+    void tearDown();
+    void testarCenario();
+public:
+
+    int run();
 };
 
 

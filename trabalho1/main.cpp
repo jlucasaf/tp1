@@ -71,5 +71,13 @@ int main()
         case TU::FALHA  : cout << "FALHA   - QUADRO" << endl;
                                 break;
     }
+
+    TUCartao testeCartao;
+    switch(testeCartao.run()){
+        case TU::SUCESSO: cout << "SUCESSO - CARTAO" << endl;
+                                break;
+        case TU::FALHA  : cout << "FALHA   - CARTAO" << endl;
+                                break;
+    }
     return 0;
 }
