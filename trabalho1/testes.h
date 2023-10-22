@@ -136,13 +136,21 @@ class TUConta : public TU{
     void setUp();
     void tearDown();
     void testarCenario();
-    void testarCenarioFalha();
 public:
 
     int run();
 };
 
 class TUQuadro : public TU{
+    private:
+    Quadro *quadro;
+    int estado;
+    void setUp();
+    void tearDown();
+    void testarCenario();
+public:
+
+    int run();
 };
 
 class TUCartao : public TU{

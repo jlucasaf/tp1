@@ -63,5 +63,13 @@ int main()
         case TU::FALHA  : cout << "FALHA   - CONTA" << endl;
                                 break;
     }
+
+    TUQuadro testeQuadro;
+    switch(testeQuadro.run()){
+        case TU::SUCESSO: cout << "SUCESSO - QUADRO" << endl;
+                                break;
+        case TU::FALHA  : cout << "FALHA   - QUADRO" << endl;
+                                break;
+    }
     return 0;
 }

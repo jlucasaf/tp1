@@ -23,6 +23,9 @@ const std::string TU::SENHA_VALIDA_ENTIDADE = "B1;t5";
 const std::string TU::CODIGO_VALIDO_ENTIDADE = "BA54";
 const std::string TUConta::NOME_VALIDO = "Betina alves";
 
+const string DESCRICAO_VALIDA = "Essa e uma descricao valida.";
+const string NOME_VALIDO_TESTE = "Esse e um quadro.";
+
 
 
 
@@ -337,6 +340,57 @@ void TUConta::testarCenario()
 }
 
 int TUConta::run()
+{
+    setUp();
+    testarCenario();
+    tearDown();
+    return estado;
+}
+
+//TUQuadro
+
+void TUQuadro::setUp()
+{
+    quadro = new Quadro();
+    estado = SUCESSO;
+}
+
+void TUQuadro::tearDown()
+{
+    delete quadro;
+}
+
+void TUQuadro::testarCenario()
+{
+    Codigo codigo;
+    Texto nome;
+    Texto descricao;
+    Limite limite;
+
+    codigo.setValor(CODIGO_VALIDO_ENTIDADE);
+    quadro->setCodigo(codigo);
+    if(quadro->getCodigo().getValor() != CODIGO_VALIDO_ENTIDADE)
+    estado = FALHA;
+
+    nome.setValor(NOME_VALIDO_TESTE);
+    quadro->setNome(nome);
+    if(quadro->getNome().getValor() != NOME_VALIDO_TESTE)
+    estado = FALHA;
+
+    descricao.setValor(DESCRICAO_VALIDA);
+    quadro->setDescricao(descricao);
+    if(quadro->getDescricao().getValor() != DESCRICAO_VALIDA)
+        estado = FALHA;
+
+    limite.setValor(LIMITE_VALIDO_ENTIDADE);
+    quadro->setLimite(limite);
+    if(quadro->getLimite().getValor() != LIMITE_VALIDO_ENTIDADE)
+        estado = FALHA;
+
+
+}
+
+int TUQuadro::run()
 {
     setUp();
     testarCenario();
