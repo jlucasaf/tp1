@@ -8,7 +8,7 @@ using namespace std;
 
 // Implementacao: 190015187
 // Revisao:
-class CodigoCartao {
+class Codigo {
 private:
     string valor;
     bool validar(string codigo);
@@ -17,7 +17,7 @@ public:
     string getValor() const;
 };
 
-inline string CodigoCartao::getValor() const {
+inline string Codigo::getValor() const {
     return valor;
 }
 

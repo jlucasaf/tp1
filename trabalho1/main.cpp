@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    CodigoCartao *teste =  new CodigoCartao();
+    Codigo *teste =  new Codigo();
 
 
    // teste->setValor("ABCD");

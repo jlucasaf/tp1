@@ -10,7 +10,7 @@ using namespace std;
 
 // Implementação: 190015187
 // revisão:
-bool CodigoCartao::validar(string codigo)
+bool Codigo::validar(string codigo)
 {
     if(codigo.empty() || codigo.size() != 4)
         return false;
@@ -23,7 +23,7 @@ bool CodigoCartao::validar(string codigo)
 
 // Implementação: 190015187
 // revisão:
-void CodigoCartao::setValor(string codigo)
+void Codigo::setValor(string codigo)
 {
 
     if(!validar(codigo))
