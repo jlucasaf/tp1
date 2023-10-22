@@ -36,8 +36,8 @@ private:
 
 class TUColuna: public TU{
     private:
-    const static int LIMITE_INVALIDO = 25;
-    const static int LIMITE_VALIDO = 10;
+    const static string COLUNA_INVALIDA;
+    const static string COLUNA_VALIDA;
     Coluna *coluna;
     int estado;
     void setUp();

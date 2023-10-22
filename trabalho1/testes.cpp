@@ -14,6 +14,9 @@ const std::string TUSenha::SENHA_INVALIDA = "ema..@Teste. ";
 const std::string TUTexto::TEXTO_VALIDO = "Oi, bom dia.";
 const std::string TUTexto::TEXTO_INVALIDO = "oi";
 
+const std::string TUColuna::COLUNA_VALIDA = "SOLICITADO";
+const std::string TUColuna::COLUNA_INVALIDA = "solicitado";
+
 
 // TUCodigo
 // implementacao: 190015187
@@ -151,6 +154,97 @@ int TUTexto::run(){
     tearDown();
     return estado;
 }
+
+// TUColuna
+// implementacao: 190015187
+void TUColuna::setUp(){
+    coluna = new Coluna();
+    estado = SUCESSO;
+
+}
+void TUColuna::tearDown(){
+    delete coluna;
+}
+void TUColuna::testarCenarioFalha()
+{
+
+    try{
+        coluna->setValor(COLUNA_INVALIDA);
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao)
+    {
+        if(coluna->getValor() == COLUNA_INVALIDA)
+            estado = FALHA;
+    }
+}
+void TUColuna::testarCenarioSucesso()
+{
+
+    try
+    {
+        coluna->setValor(COLUNA_VALIDA);
+        if(coluna->getValor() != COLUNA_VALIDA)
+            estado = FALHA;
+    }
+    catch(invalid_argument &excecao)
+    {
+        estado = FALHA;
+    }
+}
+int TUColuna::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+// TUEmail
+// implementacao: 190015187
+void TUEmail::setUp(){
+    email = new Email();
+    estado = SUCESSO;
+
+}
+void TUEmail::tearDown(){
+    delete email;
+}
+void TUEmail::testarCenarioFalha()
+{
+
+    try{
+        email->setValor(EMAIL_INVALIDO);
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao)
+    {
+        if(email->getValor() == EMAIL_INVALIDO)
+            estado = FALHA;
+    }
+}
+void TUEmail::testarCenarioSucesso()
+{
+
+    try
+    {
+        email->setValor(EMAIL_VALIDO);
+        if(email->getValor() != EMAIL_VALIDO)
+            estado = FALHA;
+    }
+    catch(invalid_argument &excecao)
+    {
+        estado = FALHA;
+    }
+}
+int TUEmail::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
 
 
 
