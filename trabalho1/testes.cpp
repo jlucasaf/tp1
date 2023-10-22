@@ -17,6 +17,14 @@ const std::string TUTexto::TEXTO_INVALIDO = "oi";
 const std::string TUColuna::COLUNA_VALIDA = "SOLICITADO";
 const std::string TUColuna::COLUNA_INVALIDA = "solicitado";
 
+const std::string TU::TEXTO_VALIDO_ENTIDADE = "Olá, tudo bem.";
+const std::string TU::EMAIL_VALIDO_ENTIDADE = "email@dominio";
+const std::string TU::SENHA_VALIDA_ENTIDADE = "B1;t5";
+const std::string TU::CODIGO_VALIDO_ENTIDADE = "BA54";
+const std::string TUConta::NOME_VALIDO = "Betina alves";
+
+
+
 
 // TUCodigo
 // implementacao: 190015187
@@ -286,6 +294,52 @@ int TUSenha::run(){
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+// ---------  ENTIDADES ------------
+
+//TUConta
+
+void TUConta::setUp()
+{
+    conta = new Conta();
+    estado = SUCESSO;
+}
+
+void TUConta::tearDown()
+{
+    delete conta;
+}
+
+void TUConta::testarCenario()
+{
+    Email email;
+    Texto nome;
+    Senha senha;
+
+    email.setValor(EMAIL_VALIDO_ENTIDADE);
+    conta->setEmail(email);
+    if(conta->getEmail().getValor() != EMAIL_VALIDO_ENTIDADE)
+    estado = FALHA;
+
+    nome.setValor(NOME_VALIDO);
+    conta->setNome(nome);
+    if(conta->getNome().getValor() != NOME_VALIDO)
+    estado = FALHA;
+
+    senha.setValor(SENHA_VALIDA_ENTIDADE);
+    conta->setSenha(senha);
+    if(conta->getSenha().getValor() != SENHA_VALIDA_ENTIDADE)
+        estado = FALHA;
+
+}
+
+int TUConta::run()
+{
+    setUp();
+    testarCenario();
     tearDown();
     return estado;
 }
