@@ -107,6 +107,52 @@ int TULimite::run(){
     return estado;
 }
 
+// TUTexto
+// implementacao: 190015187
+void TUTexto::setUp(){
+    texto = new Texto();
+    estado = SUCESSO;
+
+}
+void TUTexto::tearDown(){
+    delete texto;
+}
+void TUTexto::testarCenarioFalha()
+{
+
+    try{
+        texto->setValor(TEXTO_INVALIDO);
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao)
+    {
+        if(texto->getValor() == TEXTO_INVALIDO)
+            estado = FALHA;
+    }
+}
+void TUTexto::testarCenarioSucesso()
+{
+
+    try
+    {
+        texto->setValor(TEXTO_VALIDO);
+        if(texto->getValor() != TEXTO_VALIDO)
+            estado = FALHA;
+    }
+    catch(invalid_argument &excecao)
+    {
+        estado = FALHA;
+    }
+}
+int TUTexto::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+
 
 
 
