@@ -29,11 +29,9 @@ public:
 inline void Conta::setEmail(const Email& _email){
     this->email = _email;
 }
-
 inline void Conta::setNome(const Texto& _nome){
     this->nome = _nome;
 }
-
 inline void Conta::setSenha(const Senha& _senha){
     this->senha = _senha;
 }
@@ -42,11 +40,9 @@ inline void Conta::setSenha(const Senha& _senha){
 inline Email Conta::getEmail() const {
     return email;
 }
-
 inline Texto Conta::getNome() const {
     return nome;
 }
-
 inline Senha Conta::getSenha() const {
     return senha;
 }
