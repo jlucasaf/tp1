@@ -22,12 +22,12 @@ private:
     const static string CODIGO_VALIDO;
     const static string CODIGO_INVALIDO;
     Codigo *codigo;
-
     int estado;
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
     void testarCenarioFalha();
+public:
     int run();
 
 };
@@ -45,7 +45,6 @@ class TUColuna: public TU{
     void testarCenarioSucesso();
     void testarCenarioFalha();
 public:
-
     int run();
 };
 
@@ -89,7 +88,6 @@ class TUSenha : public TU{
     void testarCenarioSucesso();
     void testarCenarioFalha();
 public:
-
     int run();
 };
 

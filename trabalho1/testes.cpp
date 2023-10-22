@@ -4,7 +4,7 @@ const std::string TUCodigo::CODIGO_VALIDO = "AA12";
 const std::string TUCodigo::CODIGO_INVALIDO = "a1B1";
 
 const std::string TUEmail::EMAIL_VALIDO = "email@dominio";
-const std::string TUEmail::EMAIL_INVALIDO = "ema..@Teste. ";
+const std::string TUEmail::EMAIL_INVALIDO = "ema..awwdas.@.Teste.";
 
 
 const std::string TUSenha::SENHA_VALIDA = "Ac!12";
@@ -238,6 +238,51 @@ void TUEmail::testarCenarioSucesso()
     }
 }
 int TUEmail::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+// TUSenha
+// implementacao: 190015187
+void TUSenha::setUp(){
+    senha = new Senha();
+    estado = SUCESSO;
+
+}
+void TUSenha::tearDown(){
+    delete senha;
+}
+void TUSenha::testarCenarioFalha()
+{
+
+    try{
+        senha->setValor(SENHA_INVALIDA);
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao)
+    {
+        if(senha->getValor() == SENHA_INVALIDA)
+            estado = FALHA;
+    }
+}
+void TUSenha::testarCenarioSucesso()
+{
+
+    try
+    {
+        senha->setValor(SENHA_VALIDA);
+        if(senha->getValor() != SENHA_VALIDA)
+            estado = FALHA;
+    }
+    catch(invalid_argument &excecao)
+    {
+        estado = FALHA;
+    }
+}
+int TUSenha::run(){
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();

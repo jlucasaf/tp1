@@ -62,11 +62,11 @@ void Coluna::setValor(string coluna)
 bool Email::validar(string email)
 {
 
-    if(email.empty() || email.size() < 5 || email.size() > 31)
+    if(email.empty())
         return false;
 
-        // Expressao regular para verificar o formato do email.
-    regex pattern("^[A-Za-z0-9]{2,10}(?:\\.[A-Za-z0-9]{2,10})*[^.\\s@]@([A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\\.)+[A-Za-z]{2,20}$");
+    // Expressao regular para verificar o formato do email.
+    regex pattern("^(?!.*\\.{2})[A-Za-z0-9.]{2,10}@(?!\\.)[A-Za-z0-9.]{2,20}$");
 
     // Verifica se a string corresponde ao padrao.
     return regex_match(email, pattern);

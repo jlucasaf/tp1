@@ -1,8 +1,9 @@
 # depslib dependency file v1.0
-1697939707 source:e:\dev\repos\tp1\tp1\trabalho1\main.cpp
+1697950194 source:e:\dev\repos\tp1\tp1\trabalho1\main.cpp
 	<iostream>
 	"dominios.h"
 	"entidades.h"
+	"testes.h"
 
 1697926223 source:e:\dev\repos\tp1\tp1\trabalho1\entidades.cpp
 	"entidades.h"
@@ -15,7 +16,7 @@
 	<stdexcept>
 	<string>
 
-1697948709 source:e:\dev\repos\tp1\tp1\trabalho1\testes.cpp
+1697950568 source:e:\dev\repos\tp1\tp1\trabalho1\testes.cpp
 	"testes.h"
 
 1697949170 source:e:\dev\repos\tp1\tp1\trabalho1\dominios.cpp
@@ -25,7 +26,7 @@
 	<set>
 	<locale>
 
-1697948752 e:\dev\repos\tp1\tp1\trabalho1\testes.h
+1697950006 e:\dev\repos\tp1\tp1\trabalho1\testes.h
 	"dominios.h"
 	<string>
 
