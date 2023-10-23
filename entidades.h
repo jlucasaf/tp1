@@ -6,31 +6,30 @@
 
 /**
  * @file entidades.h
- * @brief Este arquivo contém a definição de classes que representam as entidades do sistema Kanban.
+ * @brief Este arquivo cont&eacute;m a defini&ccedil;&atilde;o de classes que representam as entidades do sistema Kanban.
  */
-
 // Implementacao: 190015187
 // Revisao:
 
 /**
  * @class Conta
- * @brief Classe que representa a entidade "Conta" no sistema Kanban.
+ * @brief Classe que representa a entidade &quot;Conta&quot; no sistema Kanban.
  */
 class Conta {
 private:
-    Email  email; ///< Representa o endereço de e-mail da conta.
-    Texto  nome; ///< Representa o nome associado à conta.
+    Email  email; ///< Representa o endere&ccedil;o de e-mail da conta.
+    Texto  nome; ///< Representa o nome associado &agrave; conta.
     Senha  senha; ///< Representa a senha da conta.
 public:
     //setters
-    void setEmail(const Email&); ///< Define o endereço de e-mail da conta.
+    void setEmail(const Email&); ///< Define o endere&ccedil;o de e-mail da conta.
     void setNome(const Texto&); ///< Define o nome da conta.
     void setSenha(const Senha&); ///< Define a senha da conta.
 
     //getters
-    Email getEmail() const; ///< Obtém o endereço de e-mail da conta.
-    Texto getNome() const; ///< Obtém o nome da conta.
-    Senha getSenha() const; ///< Obtém a senha da conta.
+    Email getEmail() const; ///< Obt&eacute;m o endere&ccedil;o de e-mail da conta.
+    Texto getNome() const; ///< Obt&eacute;m o nome da conta.
+    Senha getSenha() const; ///< Obt&eacute;m a senha da conta.
 };
 
 // Conta setters
@@ -61,27 +60,27 @@ inline Senha Conta::getSenha() const {
 
 /**
  * @class Quadro
- * @brief Classe que representa a entidade "Quadro" no sistema Kanban.
+ * @brief Classe que representa a entidade &quot;Quadro&quot; no sistema Kanban.
  */
 class Quadro{
 private:
-     Codigo codigo; ///< Representa o código do quadro.
+     Codigo codigo; ///< Representa o c&oacute;digo do quadro.
      Texto nome; ///< Representa o nome do quadro.
-     Texto descricao; ///< Representa a descrição do quadro.
+     Texto descricao; ///< Representa a descri&ccedil;&atilde;o do quadro.
      Limite limite; ///< Representa o limite de tarefas do quadro.
 
 public:
     // setters
-    void setCodigo(const Codigo&); ///< Define o código do quadro.
+    void setCodigo(const Codigo&); ///< Define o c&oacute;digo do quadro.
     void setLimite(const Limite&); ///< Define o limite de tarefas do quadro.
     void setNome(const Texto&); ///< Define o nome do quadro.
-    void setDescricao(const Texto&); ///< Define a descrição do quadro.
+    void setDescricao(const Texto&); ///< Define a descri&ccedil;&atilde;o do quadro.
 
     //getters
-    Texto getDescricao() const; ///< Obtém a descrição do quadro.
-    Texto getNome() const; ///< Obtém o nome do quadro.
-    Codigo getCodigo() const; ///< Obtém o código do quadro.
-    Limite getLimite() const; ///< Obtém o limite de tarefas do quadro.
+    Texto getDescricao() const; ///< Obt&eacute;m a descri&ccedil;&atilde;o do quadro.
+    Texto getNome() const; ///< Obt&eacute;m o nome do quadro.
+    Codigo getCodigo() const; ///< Obt&eacute;m o c&oacute;digo do quadro.
+    Limite getLimite() const; ///< Obt&eacute;m o limite de tarefas do quadro.
 };
 
 // Quadro setters
@@ -118,26 +117,26 @@ inline Limite Quadro::getLimite() const {
 
 /**
  * @class Cartao
- * @brief Classe que representa a entidade "Cartao" no sistema Kanban.
+ * @brief Classe que representa a entidade &quot;Cartao&quot; no sistema Kanban.
  */
 class Cartao{
 private:
-    Codigo codigo; ///< Representa o código do cartão.
-    Texto nome; ///< Representa o nome do cartão.
-    Texto descricao; ///< Representa a descrição do cartão.
-    Coluna coluna; ///< Representa a coluna associada ao cartão.
+    Codigo codigo; ///< Representa o c&oacute;digo do cart&atilde;o.
+    Texto nome; ///< Representa o nome do cart&atilde;o.
+    Texto descricao; ///< Representa a descri&ccedil;&atilde;o do cart&atilde;o.
+    Coluna coluna; ///< Representa a coluna associada ao cart&atilde;o.
 public:
     // setters
-    void setCodigo(const Codigo&); ///< Define o código do cartão.
-    void setNome(const Texto&); ///< Define o nome do cartão.
-    void setDescricao(const Texto&); ///< Define a descrição do cartão.
-    void setColuna(const Coluna&); ///< Define a coluna associada ao cartão.
+    void setCodigo(const Codigo&); ///< Define o c&oacute;digo do cart&atilde;o.
+    void setNome(const Texto&); ///< Define o nome do cart&atilde;o.
+    void setDescricao(const Texto&); ///< Define a descri&ccedil;&atilde;o do cart&atilde;o.
+    void setColuna(const Coluna&); ///< Define a coluna associada ao cart&atilde;o.
 
     // getters
-    Codigo getCodigo() const; ///< Obtém o código do cartão.
-    Texto getNome() const; ///< Obtém o nome do cartão.
-    Texto getDescricao() const; ///< Obtém a descrição do cartão.
-    Coluna getColuna() const; ///< Obtém a coluna associada ao cartão.
+    Codigo getCodigo() const; ///< Obt&eacute;m o c&oacute;digo do cart&atilde;o.
+    Texto getNome() const; ///< Obt&eacute;m o nome do cart&atilde;o.
+    Texto getDescricao() const; ///< Obt&eacute;m a descri&ccedil;&atilde;o do cart&atilde;o.
+    Coluna getColuna() const; ///< Obt&eacute;m a coluna associada ao cart&atilde;o.
 };
 
 // Cartao setters
